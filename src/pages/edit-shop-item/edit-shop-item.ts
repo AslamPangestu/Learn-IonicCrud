@@ -38,4 +38,12 @@ export class EditShopItemPage {
       this.navCtrl.setRoot('HomePage');
     })
   }
+
+  removeItem(item:Item){
+    this.shop.deleteItem(item)
+    .then(()=>{
+      this.toast.show(`${item.name} deleted!`);
+      this.navCtrl.setRoot('HomePage');
+    })
+  }
 }
